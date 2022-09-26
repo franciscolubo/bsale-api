@@ -112,3 +112,7 @@ Se debe ejecutar el comando **npm i**, instalar las dependencias necesarias para
 ### Crear un archivo de variables de entorno
 
 Modificar el archivo **db.js** y colocar los datos del servidor a usar o crear un archivo de variables de entorno con los datos para la conexion con el servidor MySQL
+
+### Ejecutar la API 
+
+Utilizar **npm start**
