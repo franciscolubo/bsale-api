@@ -12,7 +12,7 @@ SERVER.use(cors())
 
 SERVER.use('/', ROUTES)
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3001
 
 SERVER.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
