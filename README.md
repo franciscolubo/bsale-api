@@ -1,5 +1,7 @@
 # bsale-api test
 
+Realizado con NodeJs, Express y MySQL. API con el fin de ser utilizada para el test de bsale.
+
 ## Peticiones al servidor
 
 ### GET todos los productos
