@@ -26,7 +26,7 @@ const conectionDB = () => {
 // Realizo las distintas sentencias para MySQL con las siguientes funciones
 
 const callProducts = (callback) => {
-    const SQL = 'SELECT * FROM product'
+    const SQL = 'SELECT * FROM product ORDER BY category ASC'
     pool.query(SQL, (err, results) => {
         if (err) {
             throw err
