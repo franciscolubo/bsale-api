@@ -82,3 +82,33 @@ Busca los productos que comienzen por el valor pasado y los devuelvo
   "category": 2
 }
 ```
+
+### POST ordenar productos por orden
+
+> **POST: /products**
+
+Recibe por body ciertos parametros para ejectur la busqueda
+
+```
+{
+  "order": "ASC"
+  "type": "name"
+}
+```
+
+- **order**, indica si es de tipo ascendente o descendente.
+- **type**, dice si es del tipo nombre o precio el ordenamiento a realizar.
+
+#### Respuesta
+
+Devuelve un objeto como anteriormente pero con el orden especificado
+
+## Correr el proyecto de forma local
+
+### Instalacion
+
+Se debe ejecutar el comando **npm i**, instalar las dependencias necesarias para poder correr el proyecto
+
+### Crear un archivo de variables de entorno
+
+Modificar el archivo **db.js** y colocar los datos del servidor a usar o crear un archivo de variables de entorno con los datos para la conexion con el servidor MySQL
