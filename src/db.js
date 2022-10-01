@@ -66,7 +66,7 @@ const callOrder = (order, type, callback) => {
 }
 
 const searchBar = (value, callback) => {
-    const SQL = `SELECT * FROM product WHERE name LIKE '${value}%'`
+    const SQL = `SELECT * FROM product WHERE name LIKE '%${value}%'`
     pool.query(SQL, (err, results) => {
         if (err) {
             throw err
