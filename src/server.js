@@ -1,16 +1,16 @@
 const express = require('express')
-const { conectionDB } = require('./db')
-const ROUTES = require('./routes/routes')
+const productsRoutes = require('./routes/products.routes')
+const categoriesRoutes = require('./routes/categories.routes')
 const cors = require('cors')
 require('dotenv').config()
 
 const SERVER = express()
-conectionDB()
 
 SERVER.use(express.json())
 SERVER.use(cors())
 
-SERVER.use('/', ROUTES)
+SERVER.use('/products', productsRoutes)
+SERVER.use('/categories', categoriesRoutes)
 
 const PORT = process.env.PORT || 3001
 
