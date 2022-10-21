@@ -4,7 +4,7 @@ const { countRowsProducts } = require('../helpers/countRowsProducts')
 const getProductsPaginate = (req, res) => {
     const { page } = req.params
 
-    const SQL = `SELECT * FROM productos LIMIT ${(page - 1) * 10}, ${page * 10}`
+    const SQL = `SELECT * FROM productos LIMIT ${(page - 1) * 10}, 10`
     countRowsProducts('', cb => {
         try {
             conectionDB(SQL, result => {
@@ -26,7 +26,7 @@ const getProductsForCategory = (req, res) => {
 
     const SQL = `SELECT * FROM productos `
     const typeSQL = `WHERE id_category = ${category}`
-    const pagination = ` LIMIT ${(page - 1) * 10}, ${page * 10}`
+    const pagination = ` LIMIT ${(page - 1) * 10}, 10`
     countRowsProducts(typeSQL, cb => {
         try {
             conectionDB(SQL + typeSQL + pagination, result => {
@@ -48,7 +48,7 @@ const getProductsSearch = (req, res) => {
 
     const SQL = `SELECT * FROM productos `
     const typeSQL = `WHERE title LIKE '%${value}%'`
-    const pagination = ` LIMIT ${(page - 1) * 10}, ${page * 10}`
+    const pagination = ` LIMIT ${(page - 1) * 10}, 10`
     countRowsProducts(typeSQL, cb => {
         try {
             conectionDB(SQL + typeSQL + pagination, result => {
@@ -70,7 +70,7 @@ const getProductsOrdered = (req, res) => {
 
     const SQL = `SELECT * FROM productos `
     const typeSQL = `ORDER BY ${type} ${order}`
-    const pagination = ` LIMIT ${(page - 1) * 10}, ${page * 10}`
+    const pagination = ` LIMIT ${(page - 1) * 10}, 10`
     countRowsProducts(typeSQL, cb => {
         try {
             conectionDB(SQL + typeSQL + pagination, result => {
